@@ -29,7 +29,7 @@ class Program
 
         String sumString = sum.ToString();
         Console.WriteLine($"The sum is: {sumString}");
-        int average = sum / numbers.Count;
+        float average = ((float)sum) / numbers.Count;
         String averageString = average.ToString();
         Console.WriteLine($"The average is: {averageString}");
         int max = numbers.Max();
