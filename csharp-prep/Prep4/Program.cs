@@ -32,5 +32,8 @@ class Program
         int average = sum / numbers.Count;
         String averageString = average.ToString();
         Console.WriteLine($"The average is: {averageString}");
+        int max = numbers.Max();
+        String maxString = max.ToString();
+        Console.WriteLine($"The largest number is: {maxString}");
     }
 }
