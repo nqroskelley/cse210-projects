@@ -30,8 +30,13 @@ class Program
           return square;
         }
 
+        static void DisplayResult(string name, int square)
+        {
+          string squareString = square.ToString();
+          Console.WriteLine($"{name}, the square of your number is {squareString}");
+        }
+
         DisplayWelcome();
-        PromptUserName();
-        SquareNumber(PromptUserNumber());
+        DisplayResult(PromptUserName(),SquareNumber(PromptUserNumber()));
     }
 }
