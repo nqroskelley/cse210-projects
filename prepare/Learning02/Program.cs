@@ -16,13 +16,11 @@ class Program
         job2._startYear = 2008;
         job2._endYear = 2013;
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
-
         Resume resume = new Resume();
         resume._jobs.Add(job1);
         resume._jobs.Add(job2);
+        resume._name = "Jacob Peterson";
 
-        Console.WriteLine(resume._jobs[0]._jobTitle);
+        resume.DisplayResume();
     }
 }
