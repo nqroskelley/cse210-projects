@@ -16,7 +16,7 @@ class Program
         job2._startYear = 2008;
         job2._endYear = 2013;
 
-        Console.WriteLine(job1._company);
-        Console.WriteLine(job2._company);
+        job1.DisplayJobDetails();
+        job2.DisplayJobDetails();
     }
 }
