@@ -19,7 +19,10 @@ class Program
           Console.Write("What would you like to do? ");
           choice = Console.ReadLine();
           if (choice == "1")
-          {}
+          {
+            Prompt prompt = new Prompt();
+            prompt.GetPrompt();
+          }
           else if (choice == "2")
           {}
           else if (choice == "3")
