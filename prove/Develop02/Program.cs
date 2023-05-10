@@ -6,6 +6,7 @@ class Program
     {
         bool finished = false;
         string choice = "";
+        List<Entry> _entries = new List<Entry>();
         Console.WriteLine("Welcome to the Journal Program!");
 
         while (finished != true)
@@ -20,15 +21,31 @@ class Program
           choice = Console.ReadLine();
           if (choice == "1")
           {
+            Entry entry = new Entry();
             Prompt prompt = new Prompt();
             prompt.GetPrompt();
+            entry._prompt = prompt._prompt;
+            Console.Write("> ");
+            entry._entry = Console.ReadLine();
+            DateTime dateTime = DateTime.Now;
+            entry._date = dateTime.ToShortDateString();
+            _entries.Add(entry);
           }
           else if (choice == "2")
-          {}
+          {
+            foreach(Entry entry in _entries)
+            {
+              entry.DisplayEntry();
+            }
+          }
           else if (choice == "3")
-          {}
+          {
+            Console.WriteLine("Please enter the filename");
+          }
           else if (choice == "4")
-          {}
+          {
+            Console.WriteLine("Please name the file.");
+          }
           else if (choice == "5")
           {
             Console.Write("Goodbye!");
