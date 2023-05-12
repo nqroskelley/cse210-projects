@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         bool finished = false;
+        string filename;
         string choice = "";
         List<Entry> _entries = new List<Entry>();
         Console.WriteLine("Welcome to the Journal Program!");
@@ -40,11 +41,33 @@ class Program
           }
           else if (choice == "3")
           {
-            Console.WriteLine("Please enter the filename");
+            Console.WriteLine("Please enter the filename.");
+            filename = Console.ReadLine();
+            string[] lines = System.IO.File.ReadAllLines(filename);
+            _entries.Clear();
+
+            foreach(string line in lines)
+            {
+              string[] variables = line.Split("|");
+              Entry entry = new Entry();
+              entry._date = variables[0];
+              entry._prompt = variables[1];
+              entry._entry = variables[2];
+              _entries.Add(entry);
+            }
           }
           else if (choice == "4")
           {
             Console.WriteLine("Please name the file.");
+            filename = Console.ReadLine();
+
+            using (StreamWriter file = new StreamWriter(filename))
+            {
+              foreach(Entry entry in _entries)
+              {
+                file.WriteLine($"{entry._date}|{entry._prompt}|{entry._entry}");
+              }
+            }
           }
           else if (choice == "5")
           {
