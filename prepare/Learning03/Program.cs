@@ -4,8 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Fraction one = new Fraction();
-        Fraction six = new Fraction(6);
-        Fraction sixSevenths = new Fraction(6, 7);
+        Fraction fractionOne = new Fraction();
+        Fraction fractionTwo = new Fraction(6);
+        Fraction fractionThree = new Fraction(6, 7);
+        fractionOne.SetTop(2);
+        fractionOne.SetBottom(3);
+        Console.WriteLine(fractionOne.GetTop());
+        Console.WriteLine(fractionOne.GetBottom());
     }
 }
