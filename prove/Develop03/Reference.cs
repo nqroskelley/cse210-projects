@@ -24,4 +24,9 @@ class Reference
     _endVerse = endVerse;
     _reference = $"{_book} {_chapter}: {_verse}-{_endVerse}";
   }
+
+  public string GetReference()
+  {
+    return _reference;
+  }
 }
