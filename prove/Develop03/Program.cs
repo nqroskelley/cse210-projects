@@ -10,6 +10,8 @@ class Program
 
         while (_input != "quit")
         {
+          _scripture.Display();
+          Console.WriteLine("");
           Console.WriteLine("Press enter to continue or type 'quit' to exit.");
           _input = Console.ReadLine();
         }

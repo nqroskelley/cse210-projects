@@ -18,4 +18,15 @@ class Scripture
       _words.Add(_word);
     }
   }
+
+  public void Display()
+  {
+    Console.Clear();
+    Console.WriteLine(_reference);
+    foreach(Word word in _words)
+    {
+      Console.Write($"{word.GetWord()} ");
+    }
+    Console.WriteLine("");
+  }
 }

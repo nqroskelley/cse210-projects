@@ -13,7 +13,7 @@ class Reference
     _book = book;
     _chapter = chapter;
     _verse = verse;
-    _reference = $"{_book} {_chapter}: {verse}";
+    _reference = $"{_book} {_chapter}:{verse}";
   }
 
   public Reference(string book, int chapter, int verse, int endVerse)
@@ -22,7 +22,7 @@ class Reference
     _chapter = chapter;
     _verse = verse;
     _endVerse = endVerse;
-    _reference = $"{_book} {_chapter}: {_verse}-{_endVerse}";
+    _reference = $"{_book} {_chapter}:{_verse}-{_endVerse}";
   }
 
   public string GetReference()
