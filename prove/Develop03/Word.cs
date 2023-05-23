@@ -10,4 +10,14 @@ class Word
     _word = word;
     _hidden = false;
   }
+
+  public string GetWord()
+  {
+    return _word;
+  }
+
+  public bool GetHidden()
+  {
+    return _hidden;
+  }
 }
