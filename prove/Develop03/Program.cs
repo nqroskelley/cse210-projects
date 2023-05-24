@@ -14,6 +14,10 @@ class Program
           Console.WriteLine("");
           Console.WriteLine("Press enter to continue or type 'quit' to exit.");
           _input = Console.ReadLine();
+          if (_input != "quit")
+          {
+            _input = _scripture.HideWords();
+          }
         }
     }
 }

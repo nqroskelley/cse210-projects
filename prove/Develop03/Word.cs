@@ -26,6 +26,7 @@ class Word
   public void Hide()
   {
     _word = "";
+    _hidden = true;
 
     for(int i = 0; i < _length; i++)
     {
