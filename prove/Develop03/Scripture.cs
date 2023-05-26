@@ -9,6 +9,7 @@ class Scripture
   private Random _random = new Random();
   private int _count;
   private int _number;
+  private int _integer;
 
   public Scripture(string reference, string verse)
   {
@@ -37,11 +38,20 @@ class Scripture
 
   public string HideWords()
   {
-    if(_words.Exists(word => word.GetHidden() == false))
+    if (_words.Exists(word => word.GetHidden() == false))
     {
-      for(int i = 0; i < 3; i++)
+      _integer = _words.FindAll(word => word.GetHidden() == false).Count;
+      if (_integer > 3)
       {
-        _number = _random.Next(0, _count);
+        _integer = 3;
+      }
+      for (int i = 0; i < _integer; i++)
+      {
+        do
+        {
+          _number = _random.Next(0, _count);
+        } while (_words[_number].GetHidden() == true);
+
         _words[_number].Hide();
       }
 

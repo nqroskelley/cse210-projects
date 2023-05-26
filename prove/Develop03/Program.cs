@@ -1,5 +1,6 @@
 using System;
-
+//The following features have been implemented to exceed requirements:
+//The program always selects unhidden words to hide.
 class Program
 {
     static void Main(string[] args)
