@@ -22,11 +22,17 @@ class Program
           _choice = Console.ReadLine();
 
           if (_choice == "1")
-          {}
+          {
+            _breathig.Begin();
+          }
           else if (_choice == "2")
-          {}
+          {
+            _reflection.Begin();
+          }
           else if (_choice == "3")
-          {}
+          {
+            _listing.Begin();
+          }
           else if (_choice == "4")
           {
             Console.WriteLine("Goodbye!");
