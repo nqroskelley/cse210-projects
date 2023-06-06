@@ -24,14 +24,17 @@ class Program
           if (_choice == "1")
           {
             _breathig.Begin();
+            _breathig.End();
           }
           else if (_choice == "2")
           {
             _reflection.Begin();
+            _reflection.End();
           }
           else if (_choice == "3")
           {
             _listing.Begin();
+            _listing.End();
           }
           else if (_choice == "4")
           {
@@ -39,6 +42,7 @@ class Program
           }
           else
           {
+            Console.Clear();
             Console.WriteLine("Sorry, I didn't understand that.");
           }
         }

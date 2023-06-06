@@ -35,6 +35,7 @@ class Activity
 
   public void Begin ()
   {
+    Console.Clear();
     Console.WriteLine($"Welcome to the {_activity} activity!");
     Console.WriteLine("");
     Console.WriteLine(_description);
@@ -59,10 +60,13 @@ class Activity
 
     _start = DateTime.Now;
     _stop = _start.AddSeconds(_time);
+
+    Console.WriteLine("");
   }
   
   public void Countdown ()
   {
+    Console.WriteLine("");
     _countdown = 5;
     Console.Write("Get ready... ");
     while (_countdown > 0)
@@ -72,5 +76,13 @@ class Activity
       _countdown--;
       Console.Write("\b \b");
     }
+    Console.WriteLine("");
+  }
+
+  public void End ()
+  {
+    Console.WriteLine($"Great Job, You did the {_activity} activity for {_time} seconds!");
+    Thread.Sleep(5000);
+    Console.Clear();
   }
 }
