@@ -33,11 +33,26 @@ class Activity
       _timeString = Console.ReadLine();
 
       if (Int32.TryParse(_timeString, out _time) && _time > 0)
-      {}
+      {
+        Countdown();
+      }
       else
       {
         Console.Write("Please enter a number greater than 0: ");
       }
+    }
+  }
+  
+  public void Countdown ()
+  {
+    _countdown = 5;
+    Console.Write("Get ready... ");
+    while (_countdown > 0)
+    {
+      Console.Write($"{_countdown}");
+      Thread.Sleep(1000);
+      _countdown--;
+      Console.Write("\b \b");
     }
   }
 }
