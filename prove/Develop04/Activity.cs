@@ -41,6 +41,9 @@ class Activity
         Console.Write("Please enter a number greater than 0: ");
       }
     }
+
+    _start = DateTime.Now;
+    _stop = _start.AddSeconds(_time);
   }
   
   public void Countdown ()
