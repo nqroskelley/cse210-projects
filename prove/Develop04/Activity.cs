@@ -18,6 +18,21 @@ class Activity
     _random = new Random();
   }
 
+  public DateTime GetStart ()
+  {
+    return _start;
+  }
+
+  public DateTime GetStop ()
+  {
+    return _stop;
+  }
+
+  public Random GetRandom ()
+  {
+    return _random;
+  }
+
   public void Begin ()
   {
     Console.WriteLine($"Welcome to the {_activity} activity!");
