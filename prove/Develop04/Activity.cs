@@ -50,6 +50,8 @@ class Activity
 
       if (Int32.TryParse(_timeString, out _time) && _time > 0)
       {
+        Console.WriteLine("");
+        Console.Write("Get ready... ");
         Countdown();
       }
       else
@@ -61,14 +63,13 @@ class Activity
     _start = DateTime.Now;
     _stop = _start.AddSeconds(_time);
 
-    Console.WriteLine("");
+    Console.Clear();
   }
   
   public void Countdown ()
   {
-    Console.WriteLine("");
     _countdown = 5;
-    Console.Write("Get ready... ");
+
     while (_countdown > 0)
     {
       Console.Write($"{_countdown}");
@@ -79,10 +80,29 @@ class Activity
     Console.WriteLine("");
   }
 
+  public void Pause (int pause)
+  {
+    for (int i = pause; i > 0; i--)
+    {
+      Console.Write("|");
+      Thread.Sleep(250);
+      Console.Write("\b \b");
+      Console.Write("/");
+      Thread.Sleep(250);
+      Console.Write("\b \b");
+      Console.Write("-");
+      Thread.Sleep(250);
+      Console.Write("\b \b");
+      Console.Write("\\");
+      Thread.Sleep(250);
+      Console.Write("\b \b");
+    }
+  }
+
   public void End ()
   {
     Console.WriteLine($"Great Job, You did the {_activity} activity for {_time} seconds!");
-    Thread.Sleep(5000);
+    Pause(5);
     Console.Clear();
   }
 }
