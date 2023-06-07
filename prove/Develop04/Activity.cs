@@ -10,12 +10,14 @@ class Activity
   private string _description;
   private Random _random;
   private string _timeString;
+  private List<string> _questions;
 
   public Activity (string activity, string description)
   {
     _activity = activity;
     _description = description;
     _random = new Random();
+    _questions = new List<string>();
   }
 
   public DateTime GetStart ()
@@ -31,6 +33,11 @@ class Activity
   public Random GetRandom ()
   {
     return _random;
+  }
+
+  public List<string> GetQuestions ()
+  {
+    return _questions;
   }
 
   public void Begin ()
