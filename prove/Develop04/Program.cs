@@ -24,6 +24,7 @@ class Program
           if (_choice == "1")
           {
             _breathig.Begin();
+            _breathig.Breathe();
             _breathig.End();
           }
           else if (_choice == "2")
