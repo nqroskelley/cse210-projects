@@ -7,6 +7,7 @@ class BreathingActivity : Activity
 
   public void Breathe()
   {
+    SetTimer(DateTime.Now);
     while (DateTime.Now < GetStop())
     {
       Console.Write("Inhale... ");

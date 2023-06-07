@@ -40,6 +40,12 @@ class Activity
     return _questions;
   }
 
+  public void SetTimer (DateTime start)
+  {
+    _start = start;
+    _stop = start.AddSeconds(_time);
+  }
+
   public void Begin ()
   {
     Console.Clear();
@@ -66,9 +72,6 @@ class Activity
         Console.Write("Please enter a number greater than 0: ");
       }
     }
-
-    _start = DateTime.Now;
-    _stop = _start.AddSeconds(_time);
 
     Console.Clear();
   }
