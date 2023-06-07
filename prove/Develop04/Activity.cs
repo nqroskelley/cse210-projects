@@ -107,6 +107,7 @@ class Activity
       Thread.Sleep(250);
       Console.Write("\b \b");
     }
+    Console.WriteLine("");
   }
 
   public void End ()

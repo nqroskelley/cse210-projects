@@ -30,6 +30,7 @@ class Program
           else if (_choice == "2")
           {
             _reflection.Begin();
+            _reflection.Reflect();
             _reflection.End();
           }
           else if (_choice == "3")

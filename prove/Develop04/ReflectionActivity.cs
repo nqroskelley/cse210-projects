@@ -21,4 +21,20 @@ class ReflectionActivity : Activity
     GetQuestions().Add("How did this experience affect you personally?");
     GetQuestions().Add("What is something that you remember fondly about this experience?");
   }
+
+  public void Reflect ()
+  {
+    Console.WriteLine($"--- {_prompts[GetRandom().Next(0, 4)]} ---");
+    Console.WriteLine("");
+    Console.WriteLine("When you are ready, press enter.");
+    Console.ReadLine();
+    SetTimer(DateTime.Now);
+
+    while (DateTime.Now < GetStop())
+    {
+      Console.Write(GetQuestions()[GetRandom().Next(0, 9)]);
+      Pause(10);
+      Console.WriteLine("");
+    }
+  }
 }

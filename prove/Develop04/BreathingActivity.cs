@@ -8,6 +8,7 @@ class BreathingActivity : Activity
   public void Breathe()
   {
     SetTimer(DateTime.Now);
+
     while (DateTime.Now < GetStop())
     {
       Console.Write("Inhale... ");
@@ -15,5 +16,7 @@ class BreathingActivity : Activity
       Console.Write("Exhale... ");
       Countdown();
     }
+
+    Console.WriteLine("");
   }
 }
