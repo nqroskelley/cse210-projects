@@ -36,6 +36,7 @@ class Program
           else if (_choice == "3")
           {
             _listing.Begin();
+            _listing.List();
             _listing.End();
           }
           else if (_choice == "4")
