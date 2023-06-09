@@ -3,6 +3,7 @@ using System;
 class ListingActivity : Activity
 {
   private int _answers;
+  private int _total;
 
   public ListingActivity (string activity, string description) : base (activity, description)
   {
@@ -12,6 +13,7 @@ class ListingActivity : Activity
     GetQuestions().Add("What are some spiritual experiences that you have had?");
     GetQuestions().Add("What are some of your greatest achievements?");
     GetQuestions().Add("What are some of your favorite foods?");
+    _total = 0;
   }
 
   public void List ()
@@ -32,7 +34,11 @@ class ListingActivity : Activity
       _answers++;
     }
 
+    _total = _total + _answers;
     Console.WriteLine("");
     Console.WriteLine($"You counted {_answers} of your blessings!");
+    Pause(3);
+    Console.WriteLine($"You've counted a total of {_total} blessings!");
+    Pause(3);
   }
 }

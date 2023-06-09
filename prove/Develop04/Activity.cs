@@ -116,7 +116,7 @@ class Activity
   {
     _total = _total + _time;
     Console.WriteLine($"Great job, you did the {_activity} activity for {_time} seconds!");
-    Pause(5);
+    Pause(3);
     Console.WriteLine($"You've done the {_activity} activity for a total of {_total} seconds!");
     Pause(5);
     Console.Clear();
