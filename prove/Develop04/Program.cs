@@ -1,6 +1,6 @@
 using System;
 //The following features have been implemented to exceed requirements:
-//The console is cleared between the main menu and activities, as well between the introduction of the activities and the actrivities themselves.
+//The console is cleared between the main menu and activities, as well between the introduction of the activities and the activities themselves.
 //Each activity keeps track of the total number of seconds that the user has done that activity for.
 //The Listing activity keeps track of the total number of responses the user has entered.
 class Program
