@@ -11,6 +11,7 @@ class Activity
   private Random _random;
   private string _timeString;
   private List<string> _questions;
+  private int _total;
 
   public Activity (string activity, string description)
   {
@@ -18,6 +19,7 @@ class Activity
     _description = description;
     _random = new Random();
     _questions = new List<string>();
+    _total = 0;
   }
 
   public DateTime GetStart ()
@@ -112,7 +114,10 @@ class Activity
 
   public void End ()
   {
-    Console.WriteLine($"Great Job, You did the {_activity} activity for {_time} seconds!");
+    _total = _total + _time;
+    Console.WriteLine($"Great job, you did the {_activity} activity for {_time} seconds!");
+    Pause(5);
+    Console.WriteLine($"You've done the {_activity} activity for a total of {_total} seconds!");
     Pause(5);
     Console.Clear();
   }
