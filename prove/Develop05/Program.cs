@@ -16,9 +16,7 @@ class Program
         string _filename;
         string _goalname;
         string _description;
-        string _pointString;
-        string _timeString;
-        string _bonusString;
+        NumberChecker _numberChecker = new NumberChecker();
 
         while (_choice != "6")
         {
@@ -63,19 +61,7 @@ class Program
                 Console.WriteLine("");
                 Console.WriteLine("How many points is this goal worth?");
 
-                _points = 0;
-
-                while (_points == 0)
-                {
-                  _pointString = Console.ReadLine();
-
-                  if (Int32.TryParse(_pointString, out _points) && _points != 0)
-                  {}
-                  else
-                  {
-                    Console.WriteLine("Please enter a non-zero number.");
-                  }
-                }
+                _points = _numberChecker.CheckNumber();
 
                 if (_choice == "1")
                 {
@@ -90,36 +76,12 @@ class Program
                   Console.WriteLine("");
                   Console.WriteLine("How many times must this goal be completed?");
 
-                  _times = 0;
-
-                  while (_times == 0)
-                  {
-                    _timeString = Console.ReadLine();
-
-                    if (Int32.TryParse(_timeString, out _times) && _times != 0)
-                    {}
-                    else
-                    {
-                      Console.WriteLine("Please enter a non-zero number.");
-                    }
-                  }
+                  _times = _numberChecker.CheckNumber();
 
                   Console.WriteLine("");
                   Console.WriteLine($"How many bonus points is completing this goal {_times} times worth?");
 
-                  _bonus = 0;
-
-                  while (_bonus == 0)
-                  {
-                    _bonusString = Console.ReadLine();
-
-                    if (Int32.TryParse(_bonusString, out _bonus) && _bonus != 0)
-                    {}
-                    else
-                    {
-                      Console.WriteLine("Please enter a non-zero number.");
-                    }
-                  }
+                  _bonus = _numberChecker.CheckNumber();
 
                   _goals.Add(new ChecklistGoal(_goalname, _description, _points, _times, _bonus));
                 }
