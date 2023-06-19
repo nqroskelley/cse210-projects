@@ -79,11 +79,11 @@ class Program
 
                 if (_choice == "1")
                 {
-                  _goals.Add(new SimpleGoal());
+                  _goals.Add(new SimpleGoal(_goalname, _description, _points));
                 } 
                 else if (_choice == "2")
                 {
-                  _goals.Add(new EternalGoal());
+                  _goals.Add(new EternalGoal(_goalname, _description, _points));
                 }
                 else if (_choice == "3")
                 {
@@ -121,7 +121,7 @@ class Program
                     }
                   }
 
-                  _goals.Add(new ChecklistGoal());
+                  _goals.Add(new ChecklistGoal(_goalname, _description, _points, _times, _bonus));
                 }
               }
               else if (_choice == "4")
