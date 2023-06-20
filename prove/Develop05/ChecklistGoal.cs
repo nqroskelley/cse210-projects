@@ -11,4 +11,46 @@ class ChecklistGoal : Goal
     _timesToComplete = times;
     _bonus = bonus;
   }
+
+  public override int RecordEvent()
+  {
+    _timesCompleted++;
+    if (_timesCompleted == _timesToComplete)
+    {
+      return GetPoints() + _bonus;
+    }
+    else
+    {
+      return GetPoints();
+    }
+  }
+
+  public override bool IsComplete()
+  {
+    if (_timesCompleted >= _timesToComplete)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+  public override void Display()
+  {
+    if (IsComplete())
+    {
+      Console.WriteLine($"[X] {GetName()} ({GetDescription()}) {_timesCompleted}/{_timesToComplete}");
+    }
+    else
+    {
+      Console.WriteLine($"[] {GetName()} ({GetDescription()}) {_timesCompleted}/{_timesToComplete}");
+    }
+  }
+
+  public override string GetStringRepresentation()
+  {
+    throw new NotImplementedException();
+  }
 }

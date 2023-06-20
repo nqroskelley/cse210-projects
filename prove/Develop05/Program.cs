@@ -12,6 +12,8 @@ class Program
         int _points;
         int _times;
         int _bonus;
+        int _goalNumber;
+        int _index;
         string _choice = "";
         string _filename;
         string _goalname;
@@ -35,7 +37,9 @@ class Program
           if (_choice == "1")
           {
             _choice = "0";
+
             Console.Clear();
+
             while (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "4")
             {
               Console.WriteLine("What type of goal would you like to make?");
@@ -99,13 +103,51 @@ class Program
             Console.Clear();
           }
           else if (_choice == "2")
-          {}
+          {
+            Console.Clear();
+
+            foreach (Goal goal in _goals)
+            {
+              goal.Display();
+            }
+
+            Console.WriteLine("");
+          }
           else if (_choice == "3")
-          {}
+          {
+            Console.WriteLine("Please name the file.");
+
+            _filename = Console.ReadLine();
+
+            Console.Clear();
+          }
           else if (_choice == "4")
-          {}
+          {
+            Console.WriteLine("What is the name of the file?");
+
+            _filename = Console.ReadLine();
+
+            Console.Clear();
+          }
           else if (_choice == "5")
-          {}
+          {
+            Console.Clear();
+            Console.WriteLine("Which goal have you completed?");
+
+            _goalNumber = 0;
+
+            foreach (Goal goal in _goals)
+            {
+              _goalNumber++;
+              Console.WriteLine($"{_goalNumber}. {goal.GetName()}");
+            }
+
+            _index = _numberChecker.CheckNumber() - 1;
+
+            _score = _score + _goals[_index].RecordEvent();
+
+            Console.Clear();
+          }
           else if (_choice == "6")
           {
             Console.WriteLine("Goodbye!");
