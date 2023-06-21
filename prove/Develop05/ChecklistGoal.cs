@@ -6,8 +6,9 @@ class ChecklistGoal : Goal
   private int _timesCompleted;
   private int _bonus;
 
-  public ChecklistGoal (string name, string description, int points, int times, int bonus) : base (name, description, points)
+  public ChecklistGoal (string name, string description, int points, int complete, int times, int bonus) : base (name, description, points)
   {
+    _timesCompleted = complete;
     _timesToComplete = times;
     _bonus = bonus;
   }
@@ -51,6 +52,6 @@ class ChecklistGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    throw new NotImplementedException();
+    return $"checklist^{GetName()}|{GetDescription()}|{GetPoints()}|{_timesCompleted}|{_timesToComplete}|{_bonus}";
   }
 }

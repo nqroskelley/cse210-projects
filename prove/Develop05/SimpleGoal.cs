@@ -4,9 +4,9 @@ class SimpleGoal : Goal
 {
   private bool _complete;
 
-  public SimpleGoal (string name, string description, int points) : base (name, description, points)
+  public SimpleGoal (string name, string description, int points, bool complete) : base (name, description, points)
   {
-    _complete = false;
+    _complete = complete;
   }
 
   public override int RecordEvent ()
@@ -34,6 +34,6 @@ class SimpleGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    throw new NotImplementedException();
+    return $"simple^{GetName()}|{GetDescription()}|{GetPoints()}|{_complete}";
   }
 }

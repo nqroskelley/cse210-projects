@@ -69,7 +69,7 @@ class Program
 
                 if (_choice == "1")
                 {
-                  _goals.Add(new SimpleGoal(_goalname, _description, _points));
+                  _goals.Add(new SimpleGoal(_goalname, _description, _points, false));
                 } 
                 else if (_choice == "2")
                 {
@@ -87,7 +87,7 @@ class Program
 
                   _bonus = _numberChecker.CheckNumber();
 
-                  _goals.Add(new ChecklistGoal(_goalname, _description, _points, _times, _bonus));
+                  _goals.Add(new ChecklistGoal(_goalname, _description, _points, 0, _times, _bonus));
                 }
               }
               else if (_choice == "4")
@@ -119,6 +119,16 @@ class Program
 
             _filename = Console.ReadLine();
 
+            using (StreamWriter outputfile = new StreamWriter(_filename))
+            {
+              outputfile.WriteLine(_score);
+
+              foreach (Goal goal in _goals)
+              {
+                outputfile.WriteLine(goal.GetStringRepresentation());
+              }
+            }
+
             Console.Clear();
           }
           else if (_choice == "4")
@@ -126,6 +136,38 @@ class Program
             Console.WriteLine("What is the name of the file?");
 
             _filename = Console.ReadLine();
+
+            string[] _lines = System.IO.File.ReadAllLines(_filename);
+
+            foreach (string line in _lines)
+            {
+              string[] _parts1 = line.Split("^");
+
+              string _type = _parts1[0];
+
+              if (_type == "simple")
+              {
+                string[] _parts2 = _parts1[1].Split("|");
+
+                _goals.Add(new SimpleGoal(_parts2[0], _parts2[1], Int32.Parse(_parts2[2]), Convert.ToBoolean(_parts2[3])));
+              }
+              else if (_type == "eternal")
+              {
+                string[] _parts2 = _parts1[1].Split("|");
+
+                _goals.Add(new EternalGoal(_parts2[0], _parts2[1], Int32.Parse(_parts2[2])));
+              }
+              else if (_type == "checklist")
+              {
+                string[] _parts2 = _parts1[1].Split("|");
+
+                _goals.Add(new ChecklistGoal(_parts2[0], _parts2[1], Int32.Parse(_parts2[2]), Int32.Parse(_parts2[3]), Int32.Parse(_parts2[4]), Int32.Parse(_parts2[5])));
+              }
+              else
+              {
+                _score = Int32.Parse(_type);
+              }
+            }
 
             Console.Clear();
           }

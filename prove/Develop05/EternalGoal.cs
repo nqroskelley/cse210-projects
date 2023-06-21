@@ -22,6 +22,6 @@ class EternalGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    throw new NotImplementedException();
+    return $"eternal^{GetName()}|{GetDescription()}|{GetPoints()}";
   }
 }
