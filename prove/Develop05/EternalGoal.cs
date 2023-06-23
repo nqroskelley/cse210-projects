@@ -12,7 +12,7 @@ class EternalGoal : Goal
 
   public override bool IsComplete()
   {
-    return true;
+    return false;
   }
 
   public override void Display()

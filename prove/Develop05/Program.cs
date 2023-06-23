@@ -1,5 +1,9 @@
 using System;
-
+//The following features have been implemented to exceed requirements:
+//The program offers the option to cancel out of choices 1 and 5.
+//There is a NumberChecker class implemented to make sure that the user inputs a number at specific points.
+//If the user selects choice 2 or choice 5 while the goals list is empty, the program displays a message saying that no goals have been created yet.
+//If the user tries to record an event for a goal which is already complete, the program will ask if the event should still be recorded or not.
 class Program
 {
     static void Main(string[] args)
@@ -106,9 +110,16 @@ class Program
           {
             Console.Clear();
 
-            foreach (Goal goal in _goals)
+            if (_goals.Count() == 0)
             {
-              goal.Display();
+              Console.WriteLine("You haven't set any goals yet.");
+            }
+            else
+            {
+              foreach (Goal goal in _goals)
+              {
+                goal.Display();
+              }
             }
 
             Console.WriteLine("");
@@ -174,21 +185,74 @@ class Program
           else if (_choice == "5")
           {
             Console.Clear();
-            Console.WriteLine("Which goal have you completed?");
 
-            _goalNumber = 0;
-
-            foreach (Goal goal in _goals)
+            if (_goals.Count == 0)
             {
-              _goalNumber++;
-              Console.WriteLine($"{_goalNumber}. {goal.GetName()}");
+              Console.WriteLine("You haven't set any goals yet.");
+              Console.WriteLine("");
             }
+            else
+            {
+              Console.WriteLine("Which goal have you completed?");
 
-            _index = _numberChecker.CheckNumber() - 1;
+              _goalNumber = 0;
 
-            _score = _score + _goals[_index].RecordEvent();
+              foreach (Goal goal in _goals)
+              {
+                _goalNumber++;
+                Console.WriteLine($"{_goalNumber}. {goal.GetName()}");
+              }
 
-            Console.Clear();
+              Console.WriteLine($"{_goals.Count + 1}. Cancel");
+
+              do
+              {
+                _index = _numberChecker.CheckNumber() - 1;
+
+                if (_index < _goals.Count)
+                {
+                  if (_goals[_index].IsComplete())
+                  {
+                    Console.Clear();
+                    while (_choice != "1" && _choice != "2")
+                    {
+                      Console.WriteLine($"The goal '{_goals[_index].GetName()}' has already been completed. Record anyway?");
+                      Console.WriteLine("1. Yes");
+                      Console.WriteLine("2. No");
+
+                      _choice = Console.ReadLine();
+
+                      if (_choice != "1" && _choice != "2")
+                      {
+                        Console.Clear();
+                        Console.WriteLine("Sorry, I didn't understand that.");
+                        Console.WriteLine("");
+                      }
+                    
+                    }
+
+                    if (_choice == "1")
+                    {
+                      _score = _score + _goals[_index].RecordEvent();
+                    }
+                  }
+                  else
+                  {
+                    _score = _score + _goals[_index].RecordEvent();
+                  }
+                }
+                else if (_index == _goals.Count)
+                {}
+                else
+                {
+                  Console.Clear();
+                  Console.WriteLine("Sorry, I didn't understand that.");
+                  Console.WriteLine("");
+                }
+              } while (_index > _goals.Count);
+
+              Console.Clear();
+            }
           }
           else if (_choice == "6")
           {
