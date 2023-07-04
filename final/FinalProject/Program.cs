@@ -16,9 +16,7 @@ class Program
         {
           Console.WriteLine("");
 
-          _menu.UnitMenu();
-
-          _input1 = Console.ReadLine();
+          _input1 = _menu.UnitMenu();
 
           Console.Clear();
 
@@ -28,9 +26,7 @@ class Program
 
             if (_input1 == "1")
             {
-              _menu.LengthMenu();
-
-              _input1 = Console.ReadLine();
+              _input1 = _menu.LengthMenu();
 
               Console.Clear();
 
@@ -39,18 +35,31 @@ class Program
               _number = _numberChecker.CheckNumber();
 
               Console.Clear();
-
+           
               Console.WriteLine("What unit of length do you want to convert it to?");
 
-              _menu.LengthMenu();
+              _input2 = _menu.LengthMenu();
 
-              _input2 = Console.ReadLine();
+              if (_input2 == "1")
+              {}
+              else if (_input2 == "2")
+              {}
+              else if (_input2 == "3")
+              {}
+              else if (_input2 == "4")
+              {}
+              else if (_input2 == "5")
+              {}
+              else if (_input2 == "6")
+              {}
+              else if (_input2 == "7")
+              {}
+              else if (_input2 == "8")
+              {}
             }
             else if (_input1 == "2")
             {
-              _menu.MassMenu();
-
-              _input1 = Console.ReadLine();
+              _input1 =_menu.MassMenu();
 
               Console.Clear();
 
@@ -62,15 +71,24 @@ class Program
 
               Console.WriteLine("What unit of mass do you want to convert it to?");
 
-              _menu.MassMenu();
+              _input2 = _menu.MassMenu();
 
-              _input2 = Console.ReadLine();
+              if (_input2 == "1")
+              {}
+              else if (_input2 == "2")
+              {}
+              else if (_input2 == "3")
+              {}
+              else if (_input2 == "4")
+              {}
+              else if (_input2 == "5")
+              {}
+              else if (_input2 == "6")
+              {}
             }
             else if (_input1 == "3")
             {
-              _menu.TimeMenu();
-
-              _input1 = Console.ReadLine();
+              _input1 = _menu.TimeMenu();
 
               Console.Clear();
 
@@ -82,19 +100,27 @@ class Program
 
               Console.WriteLine("What unit of time do you want to convert it to?");
 
-              _menu.TimeMenu();
+              _input2 = _menu.TimeMenu();
 
-              _input2 = Console.ReadLine();
+              if (_input2 == "1")
+              {}
+              else if (_input2 == "2")
+              {}
+              else if (_input2 == "3")
+              {}
+              else if (_input2 == "4")
+              {}
+              else if (_input2 == "5")
+              {}
+              else if (_input2 == "6")
+              {}
+              else if (_input2 == "7")
+              {}
             }
-
           }
           else if (_input1 == "quit" || _input1 == "Quit")
           {
             Console.WriteLine("Goodbye!");
-          }
-          else
-          {
-            Console.WriteLine("Sorry, I didn't understand that.");
           }
         }
     }

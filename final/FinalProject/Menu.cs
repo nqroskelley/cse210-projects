@@ -2,15 +2,31 @@ using System;
 
 class Menu
 {
-  public void UnitMenu ()
+  private string _choice;
+
+  public string UnitMenu ()
   {
     Console.WriteLine("What kind of unit unit do you want to convert?");
     Console.WriteLine("1. Length");
     Console.WriteLine("2. Mass");
     Console.WriteLine("3. Time");
+
+    do
+    {
+      _choice = Console.ReadLine();
+
+      if (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "quit" && _choice != "Quit")
+      {
+        Console.WriteLine("Sorry, I didn't understand that.");
+
+        _choice = "";
+      }
+    } while (_choice == "");
+
+    return _choice;
   }
 
-  public void LengthMenu ()
+  public string LengthMenu ()
   {
     Console.WriteLine("1. Inches");
     Console.WriteLine("2. Feet");
@@ -20,9 +36,23 @@ class Menu
     Console.WriteLine("6. Centimeters");
     Console.WriteLine("7. Meters");
     Console.WriteLine("8. Kilometers");
+
+    do
+    {
+      _choice = Console.ReadLine();
+
+      if (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "4" && _choice != "5" && _choice != "6" && _choice != "7" && _choice != "8")
+      {
+        Console.WriteLine("Sorry, I didn't understand that.");
+
+        _choice = "";
+      }
+    } while (_choice == "");
+
+    return _choice;
   }
 
-  public void MassMenu ()
+  public string MassMenu ()
   {
     Console.WriteLine("1. Ounces");
     Console.WriteLine("2. Pounds");
@@ -30,9 +60,23 @@ class Menu
     Console.WriteLine("4. Milligrams");
     Console.WriteLine("5. Grams");
     Console.WriteLine("6. Kilograms");
+
+    do
+    {
+      _choice = Console.ReadLine();
+
+      if (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "4" && _choice != "5" && _choice != "6")
+      {
+        Console.WriteLine("Sorry, I didn't understand that.");
+
+        _choice = "";
+      }
+    } while (_choice == "");
+
+    return _choice;
   }
 
-  public void TimeMenu ()
+  public string TimeMenu ()
   {
     Console.WriteLine("1. Seconds");
     Console.WriteLine("2. Minutes");
@@ -41,5 +85,19 @@ class Menu
     Console.WriteLine("5. Weeks");
     Console.WriteLine("6. Months");
     Console.WriteLine("7. Years");
+
+    do
+    {
+      _choice = Console.ReadLine();
+
+      if (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "4" && _choice != "5" && _choice != "6" && _choice != "7")
+      {
+        Console.WriteLine("Sorry, I didn't understand that.");
+
+        _choice = "";
+      }
+    } while (_choice == "");
+
+    return _choice;
   }
 }
