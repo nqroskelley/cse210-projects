@@ -3,7 +3,16 @@ using System;
 class Foot : Length
 {
   public Foot (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    if (amount == 1)
+    {
+      SetUnit1("foot");
+    }
+    else
+    {
+      SetUnit1("feet");
+    }
+  }
 
   public override double ToInches()
   {

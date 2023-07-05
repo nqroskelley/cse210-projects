@@ -9,6 +9,7 @@ class Program
         double _number;
         Menu _menu = new Menu();
         NumberChecker _numberChecker = new NumberChecker();
+        Unit _unit = new Unit(null, 0);
 
         Console.WriteLine("Welcome to the Unit Conversion Program!");
 
@@ -40,22 +41,38 @@ class Program
 
               _input2 = _menu.LengthMenu();
 
-              if (_input2 == "1")
-              {}
-              else if (_input2 == "2")
-              {}
-              else if (_input2 == "3")
-              {}
-              else if (_input2 == "4")
-              {}
-              else if (_input2 == "5")
-              {}
-              else if (_input2 == "6")
-              {}
-              else if (_input2 == "7")
-              {}
-              else if (_input2 == "8")
-              {}
+              if (_input1 == "1")
+              {
+                _unit = new Inch(_input2, _number);
+              }
+              else if (_input1 == "2")
+              {
+                _unit = new Foot(_input2, _number);
+              }
+              else if (_input1 == "3")
+              {
+                _unit = new Yard(_input2, _number);
+              }
+              else if (_input1 == "4")
+              {
+                _unit = new Mile(_input2, _number);
+              }
+              else if (_input1 == "5")
+              {
+                _unit = new Millimeter(_input2, _number);
+              }
+              else if (_input1 == "6")
+              {
+                _unit = new Centimeter(_input2, _number);
+              }
+              else if (_input1 == "7")
+              {
+                _unit = new Meter(_input2, _number);
+              }
+              else if (_input1 == "8")
+              {
+                _unit = new Kilometer(_input2, _number);
+              }
             }
             else if (_input1 == "2")
             {
@@ -73,18 +90,30 @@ class Program
 
               _input2 = _menu.MassMenu();
 
-              if (_input2 == "1")
-              {}
-              else if (_input2 == "2")
-              {}
-              else if (_input2 == "3")
-              {}
-              else if (_input2 == "4")
-              {}
-              else if (_input2 == "5")
-              {}
-              else if (_input2 == "6")
-              {}
+              if (_input1 == "1")
+              {
+                _unit = new Ounce(_input2, _number);
+              }
+              else if (_input1 == "2")
+              {
+                _unit = new Pound(_input2, _number);
+              }
+              else if (_input1 == "3")
+              {
+                _unit = new Ton(_input2, _number);
+              }
+              else if (_input1 == "4")
+              {
+                _unit = new Milligram(_input2, _number);
+              }
+              else if (_input1 == "5")
+              {
+                _unit = new Gram(_input2, _number);
+              }
+              else if (_input1 == "6")
+              {
+                _unit = new Kilogram(_input2, _number);
+              }
             }
             else if (_input1 == "3")
             {
@@ -102,21 +131,37 @@ class Program
 
               _input2 = _menu.TimeMenu();
 
-              if (_input2 == "1")
-              {}
-              else if (_input2 == "2")
-              {}
-              else if (_input2 == "3")
-              {}
-              else if (_input2 == "4")
-              {}
-              else if (_input2 == "5")
-              {}
-              else if (_input2 == "6")
-              {}
-              else if (_input2 == "7")
-              {}
+              if (_input1 == "1")
+              {
+                _unit = new Second(_input2, _number);
+              }
+              else if (_input1 == "2")
+              {
+                _unit = new Minute(_input2, _number);
+              }
+              else if (_input1 == "3")
+              {
+                _unit = new Hour(_input2, _number);
+              }
+              else if (_input1 == "4")
+              {
+                _unit = new Day(_input2, _number);
+              }
+              else if (_input1 == "5")
+              {
+                _unit = new Week(_input2, _number);
+              }
+              else if (_input1 == "6")
+              {
+                _unit = new Month(_input2, _number);
+              }
+              else if (_input1 == "7")
+              {
+                _unit = new Year(_input2, _number);
+              }
             }
+
+            _unit.DisplayResult();
           }
           else if (_input1 == "quit" || _input1 == "Quit")
           {

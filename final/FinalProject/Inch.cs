@@ -3,7 +3,16 @@ using System;
 class Inch : Length
 {
   public Inch (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    if (amount == 1)
+    {
+      SetUnit1("inch");
+    }
+    else
+    {
+      SetUnit1("inches");
+    }
+  }
 
   public override double ToInches()
   {
