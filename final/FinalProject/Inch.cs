@@ -16,41 +16,41 @@ class Inch : Length
 
   public override double ToInches()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToFeet()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 12;
   }
 
   public override double ToYards()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 36;
   }
 
   public override double ToMiles()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 63360;
   }
 
   public override double ToMillimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 25.4;
   }
 
   public override double ToCentimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 2.54;
   }
 
   public override double ToMeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 39.3701;
   }
 
   public override double ToKilometers()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 39370.1;
   }
 }
