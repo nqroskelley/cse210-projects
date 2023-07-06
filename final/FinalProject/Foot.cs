@@ -16,41 +16,41 @@ class Foot : Length
 
   public override double ToInches()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 12;
   }
 
   public override double ToFeet()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToYards()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 3;
   }
 
   public override double ToMiles()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 5280;
   }
 
   public override double ToMillimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 304.8;
   }
 
   public override double ToCentimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 30.48;
   }
 
   public override double ToMeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 3.28084;
   }
 
   public override double ToKilometers()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 3280.84;
   }
 }
