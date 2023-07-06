@@ -3,35 +3,37 @@ using System;
 class Gram : Mass
 {
   public Gram (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("gram");
+  }
 
   public override double ToOunces()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 28.3495;
   }
 
   public override double ToPounds()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 453.592;
   }
 
   public override double ToTons()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 907185;
   }
 
   public override double ToMilligrams()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 1000;
   }
 
   public override double ToGrams()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToKilograms()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 1000;
   }
 }
