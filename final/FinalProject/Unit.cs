@@ -52,6 +52,6 @@ class Unit
 
     Console.Clear();
 
-    Console.WriteLine($"{_amount} {_unit1} equals {_result} {_unit2}.");
+    Console.WriteLine($"{_amount} {_unit1} = {_result} {_unit2}.");
   }
 }
