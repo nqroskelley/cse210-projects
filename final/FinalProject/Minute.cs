@@ -3,40 +3,42 @@ using System;
 class Minute : Time
 {
   public Minute (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("minute");
+  }
 
   public override double ToSeconds()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 60;
   }
 
   public override double ToMinutes()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToHours()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 60;
   }
 
   public override double ToDays()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 1440;
   }
 
   public override double ToWeeks()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 10080;
   }
 
   public override double ToMonths()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 43800;
   }
 
   public override double ToYears()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 525600;
   }
 }
