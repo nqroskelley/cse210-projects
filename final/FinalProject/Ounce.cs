@@ -3,35 +3,37 @@ using System;
 class Ounce : Mass
 {
   public Ounce (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("ounce");
+  }
 
   public override double ToOunces()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToPounds()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 16;
   }
 
   public override double ToTons()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 32000;
   }
 
   public override double ToMilligrams()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 28349.523125;
   }
 
   public override double ToGrams()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 28.349523125;
   }
 
   public override double ToKilograms()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 35.274;
   }
 }
