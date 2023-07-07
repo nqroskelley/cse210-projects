@@ -3,45 +3,47 @@ using System;
 class Meter : Length
 {
   public Meter (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("meter");
+  }
 
   public override double ToInches()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 39.3701;
   }
 
   public override double ToFeet()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 3.28084;
   }
 
   public override double ToYards()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 1.09361;
   }
 
   public override double ToMiles()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 1609.344;
   }
 
   public override double ToMillimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 1000;
   }
 
   public override double ToCentimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 100;
   }
 
   public override double ToMeters()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToKilometers()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 1000;
   }
 }
