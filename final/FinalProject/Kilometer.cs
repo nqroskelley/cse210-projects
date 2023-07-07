@@ -3,45 +3,47 @@ using System;
 class Kilometer : Length
 {
   public Kilometer (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("kilometer");
+  }
 
   public override double ToInches()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 39370.1;
   }
 
   public override double ToFeet()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 3280.84;
   }
 
   public override double ToYards()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 1093.61;
   }
 
   public override double ToMiles()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 1.609344;
   }
 
   public override double ToMillimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 1000000;
   }
 
   public override double ToCentimeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 100000;
   }
 
   public override double ToMeters()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 1000;
   }
 
   public override double ToKilometers()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 }
