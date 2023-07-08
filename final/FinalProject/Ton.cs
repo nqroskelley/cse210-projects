@@ -3,35 +3,37 @@ using System;
 class Ton : Mass
 {
   public Ton (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("ton");
+  }
 
   public override double ToOunces()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 32000;
   }
 
   public override double ToPounds()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 2000;
   }
 
   public override double ToTons()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToMilligrams()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 907184740;
   }
 
   public override double ToGrams()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 907184.74;
   }
 
   public override double ToKilograms()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 907.18474;
   }
 }
