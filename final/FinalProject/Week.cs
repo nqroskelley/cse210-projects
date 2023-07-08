@@ -3,40 +3,42 @@ using System;
 class Week : Time
 {
   public Week (string unit, double amount) : base (unit, amount)
-  {}
+  {
+    SetUnit1("week");
+  }
 
   public override double ToSeconds()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 604800;
   }
 
   public override double ToMinutes()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 10080;
   }
 
   public override double ToHours()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 168;
   }
 
   public override double ToDays()
   {
-    throw new NotImplementedException();
+    return GetAmount() * 7;
   }
 
   public override double ToWeeks()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToMonths()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 4.34524;
   }
 
   public override double ToYears()
   {
-    throw new NotImplementedException();
+    return GetAmount() / 52.1429;
   }
 }
