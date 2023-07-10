@@ -100,4 +100,25 @@ class Menu
 
     return _choice;
   }
+
+  public string TemperatureMenu ()
+  {
+    Console.WriteLine("1. Kelvin");
+    Console.WriteLine("2. Celsius");
+    Console.WriteLine("3. Fahrenheit");
+
+    do
+    {
+      _choice = Console.ReadLine();
+
+      if (_choice != "1" && _choice != "2" && _choice != "3")
+      {
+        Console.WriteLine("Sorry, I didn't understand that.");
+
+        _choice = "";
+      }
+    } while (_choice == "");
+
+    return _choice;
+  }
 }
