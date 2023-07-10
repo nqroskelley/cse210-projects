@@ -40,12 +40,12 @@ class Unit
 
   public void DisplayResult ()
   {
-    if (_amount != 1 && _unit1 != "inches" && _unit1 != "feet")
+    if (_amount != 1 && _unit1 != "inches" && _unit1 != "feet" && _unit1.Contains("°") == false)
     {
       _unit1 = _unit1 + "s";
     }
 
-    if (_result != 1 && _unit2 != "inches" && _unit2 != "feet")
+    if (_result != 1 && _unit2 != "inches" && _unit2 != "feet" && _unit1.Contains("°") == false)
     {
       _unit2 = _unit2 + "s";
     }
