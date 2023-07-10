@@ -21,7 +21,7 @@ class Program
 
           Console.Clear();
 
-          if (_input1 == "1" || _input1 == "2" || _input1 == "3")
+          if (_input1 == "1" || _input1 == "2" || _input1 == "3" || _input1 == "4")
           {
             Console.WriteLine("Pick your starting unit.");
 
@@ -158,6 +158,34 @@ class Program
               else if (_input1 == "7")
               {
                 _unit = new Year(_input2, _number);
+              }
+            } else if (_input1 == "4")
+            {
+              _input1 =_menu.TemperatureMenu();
+
+              Console.Clear();
+
+              Console.WriteLine("What amount do you wish to convert?");
+
+              _number = _numberChecker.CheckNumber();
+
+              Console.Clear();
+
+              Console.WriteLine("What unit of temperature do you want to convert it to?");
+
+              _input2 = _menu.TemperatureMenu();
+
+              if (_input1 == "1")
+              {
+                _unit = new Kelvin(_input2, _number);
+              }
+              else if (_input1 == "2")
+              {
+                _unit = new Celsius(_input2, _number);
+              }
+              else if (_input1 == "3")
+              {
+                _unit = new Fahrenheit(_input2, _number);
               }
             }
 

@@ -10,12 +10,13 @@ class Menu
     Console.WriteLine("1. Length");
     Console.WriteLine("2. Mass");
     Console.WriteLine("3. Time");
+    Console.WriteLine("4. Temperature");
 
     do
     {
       _choice = Console.ReadLine();
 
-      if (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "quit" && _choice != "Quit")
+      if (_choice != "1" && _choice != "2" && _choice != "3" && _choice != "4" && _choice != "quit" && _choice != "Quit")
       {
         Console.WriteLine("Sorry, I didn't understand that.");
 
