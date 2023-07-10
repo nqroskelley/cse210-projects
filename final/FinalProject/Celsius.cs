@@ -14,7 +14,7 @@ class Celsius : Temperature
 
   public override double ToCelsius()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToFahrenheit()

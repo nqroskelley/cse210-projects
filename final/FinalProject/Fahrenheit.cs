@@ -19,6 +19,6 @@ class Fahrenheit : Temperature
 
   public override double ToFahrenheit()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 }

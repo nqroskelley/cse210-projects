@@ -9,7 +9,7 @@ class Kelvin : Temperature
 
   public override double ToKelvin()
   {
-    throw new NotImplementedException();
+    return GetAmount();
   }
 
   public override double ToCelsius()
