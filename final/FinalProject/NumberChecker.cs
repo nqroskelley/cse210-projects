@@ -7,6 +7,10 @@ class NumberChecker
 
   public double CheckNumber ()
   {
+    Console.Clear();
+
+    Console.WriteLine("How many do you wish to convert?");
+
     do
     {
       _string = Console.ReadLine();
@@ -19,6 +23,10 @@ class NumberChecker
         _string = "";
       }
     } while (_string == "");
+
+    Console.Clear();
+           
+    Console.WriteLine("Pick your ending unit.");
 
     return _double;
   }

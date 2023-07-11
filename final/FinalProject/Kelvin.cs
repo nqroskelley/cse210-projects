@@ -4,10 +4,10 @@ class Kelvin : Temperature
 {
   public Kelvin (string unit, double amount) : base (unit, amount)
   {
-    SetUnit1("°K");
+    SetUnit1("K");
   }
 
-  public override double ToKelvin()
+  public override double ToKelvins()
   {
     return GetAmount();
   }

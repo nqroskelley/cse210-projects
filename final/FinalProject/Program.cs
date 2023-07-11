@@ -29,15 +29,7 @@ class Program
             {
               _input1 = _menu.LengthMenu();
 
-              Console.Clear();
-
-              Console.WriteLine("What amount do you wish to convert?");
-
               _number = _numberChecker.CheckNumber();
-
-              Console.Clear();
-           
-              Console.WriteLine("What unit of length do you want to convert it to?");
 
               _input2 = _menu.LengthMenu();
 
@@ -78,15 +70,7 @@ class Program
             {
               _input1 =_menu.MassMenu();
 
-              Console.Clear();
-
-              Console.WriteLine("What amount do you wish to convert?");
-
               _number = _numberChecker.CheckNumber();
-
-              Console.Clear();
-
-              Console.WriteLine("What unit of mass do you want to convert it to?");
 
               _input2 = _menu.MassMenu();
 
@@ -119,15 +103,7 @@ class Program
             {
               _input1 = _menu.TimeMenu();
 
-              Console.Clear();
-
-              Console.WriteLine("What amount do you wish to convert?");
-
               _number = _numberChecker.CheckNumber();
-
-              Console.Clear();
-
-              Console.WriteLine("What unit of time do you want to convert it to?");
 
               _input2 = _menu.TimeMenu();
 
@@ -163,15 +139,7 @@ class Program
             {
               _input1 =_menu.TemperatureMenu();
 
-              Console.Clear();
-
-              Console.WriteLine("What amount do you wish to convert?");
-
               _number = _numberChecker.CheckNumber();
-
-              Console.Clear();
-
-              Console.WriteLine("What unit of temperature do you want to convert it to?");
 
               _input2 = _menu.TemperatureMenu();
 

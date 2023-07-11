@@ -7,7 +7,7 @@ class Celsius : Temperature
     SetUnit1("°C");
   }
 
-  public override double ToKelvin()
+  public override double ToKelvins()
   {
     return GetAmount() + 273.15;
   }

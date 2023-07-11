@@ -104,9 +104,9 @@ class Menu
 
   public string TemperatureMenu ()
   {
-    Console.WriteLine("1. Kelvin");
-    Console.WriteLine("2. Celsius");
-    Console.WriteLine("3. Fahrenheit");
+    Console.WriteLine("1. Kelvins");
+    Console.WriteLine("2. Degrees Celsius");
+    Console.WriteLine("3. Degrees Fahrenheit");
 
     do
     {

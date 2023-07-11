@@ -6,8 +6,8 @@ abstract class Temperature : Unit
   {
     if (unit == "1")
     {
-      SetUnit2("°K");
-      SetResult(ToKelvin());
+      SetUnit2("K");
+      SetResult(ToKelvins());
     }
     if (unit == "2")
     {
@@ -21,7 +21,7 @@ abstract class Temperature : Unit
     }
   }
 
-  public abstract double ToKelvin ();
+  public abstract double ToKelvins ();
 
   public abstract double ToCelsius ();
 

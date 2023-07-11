@@ -7,7 +7,7 @@ class Fahrenheit : Temperature
     SetUnit1("°F");
   }
 
-  public override double ToKelvin()
+  public override double ToKelvins()
   {
     return ((GetAmount() -32) / 1.8) + 273.15;
   }
