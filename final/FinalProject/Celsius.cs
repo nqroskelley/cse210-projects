@@ -9,7 +9,7 @@ class Celsius : Temperature
 
   public override double ToKelvin()
   {
-    throw new NotImplementedException();
+    return GetAmount() + 273.15;
   }
 
   public override double ToCelsius()
@@ -19,6 +19,6 @@ class Celsius : Temperature
 
   public override double ToFahrenheit()
   {
-    throw new NotImplementedException();
+    return (GetAmount() * 1.8) + 32;
   }
 }
