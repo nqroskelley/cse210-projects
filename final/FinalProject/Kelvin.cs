@@ -14,11 +14,11 @@ class Kelvin : Temperature
 
   public override double ToCelsius()
   {
-    throw new NotImplementedException();
+    return GetAmount() - 273.15;
   }
 
   public override double ToFahrenheit()
   {
-    throw new NotImplementedException();
+    return ((GetAmount() - 273.15) * 1.8) + 32;
   }
 }
