@@ -6,7 +6,7 @@ class Menu
 
   public string UnitMenu ()
   {
-    Console.WriteLine("What kind of unit do you want to convert?");
+    Console.WriteLine("What kind of unit do you want to convert? (Type 'quit' or 'Quit' to exit the program.)");
     Console.WriteLine("1. Length");
     Console.WriteLine("2. Mass");
     Console.WriteLine("3. Time");
